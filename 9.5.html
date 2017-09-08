@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 表格
+		document.write('<table border=1 cellspacing=0 cellpadding=2>');
+			for(var i=1;i<=10;i++){
+				document.write('<tr>')
+					for(var j=1;j<=10;j++){
+						document.write('<td>sun</td>')
+					}
+				document.write('</tr>')
+			}
+		document.write('</table>');
+		// 乘法表
+		
+		document.write('<table border=1 cellspacing=0 cellpadding=2>');
+			for(var i=1;i<=9;i++){
+				document.write('<tr>')
+					for(var j=1;j<=i;j++){
+						var sum=i*j;
+						document.write('<td>'+j+'*'+i+'='+sum+'</td>')
+					}
+				document.write('</tr>')
+			}
+		document.write('</table>');
+		//隔行换色
+		document.write('<table border=1 cellspacing=0 cellpadding=2>');
+			for(var i=1;i<=10;i++){
+					if(i%2==0){
+						document.write('<tr bgcolor=orange>')
+					}else{
+						document.write('<tr bgcolor=red>')
+						}
+				for(var j=1;j<=10;j++){
+					document.write('<td>sun</td>')
+				}
+				document.write('</tr>')
+			}
+		document.write('</table>');
+		//隔列换色
+		document.write('<table border=1 cellspacing=0 cellpadding=2>');
+			for(var i=1;i<=10;i++){
+				document.write('<tr>')
+					for(var j=1;j<=10;j++){
+						if(j%2==0){
+							document.write('<td style="background:pink">sun</td>');
+						}else{
+							document.write('<td style="background:yellow">sun</td>');
+						}
+					}
+					document.write('</tr>')
+			}
+		document.write('</table>');
+	</script>
+</body>
+</html>
