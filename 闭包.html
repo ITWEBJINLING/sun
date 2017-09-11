@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*	//闭包函数
+		function fn(){
+			var num=10;
+			return fn1;
+			function fn1(){
+				num++;
+				return num;
+			}
+		}
+		var result =fn();
+		console.log(result());
+
+
+		//箭头函数
+		var fn= a=>a;
+		console.log(fn(10));
+		var fn= (a,b) =>a+b;
+		console.log(fn(1,2));
+		var fn= (a,b) =>{
+			alert(a+b);
+			alert(a-b);
+			return[a,b]
+		}
+		console.log(fn(1,2));
+*/
+
+		//let   声明变量
+		var  num=10;
+		function fn(){
+			let num=20;
+			console.log(num);
+			fn1();
+			function fn1(){
+				console.log(num);
+			}
+		}
+		fn();
+		console.log(num)
+		console.log(num)
+
+		console.log(escape('裴岳英'));
+		console.log(unescape('%u6731%u5B87%u5EB7'));
+		console.log(Number('6464664'));
+		console.log(String(4564646));
+		console.log(Boolean('hdh'));
+		console.log(parseInt('5656awdfw'))
+		console.log(parseFloat('5656.04awdfw'))
+		console.log(isNaN('5656.04awdfw'));
+
+	</script>
+</body>
+</html>
