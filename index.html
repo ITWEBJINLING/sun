@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//indexof   首次位置
+		var arr=[45,8,7,5,6,45];
+		console.log(indexof(arr,45));
+		function indexof(arr,value){
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==value){
+					return i;
+				}
+			}
+			return -1;
+		}
+		//最后一次位置
+		var arr=[45,8,7,5,6,45];
+		console.log(lastIndexOf(arr,45));
+		function lastIndexOf(arr,value){
+			for(var i=arr.length-1;i>=0;i--){
+				if(arr[i]==value){
+					return i;
+				}
+			}
+			return -1;
+		}
+		//反转
+		var arr=[6,7,8,9];
+		console.log(reverse(arr))
+		function reverse(arr){
+			var newarr=[];
+			for(var i=arr.length-1;i>-1;i--){
+				//newarr[newarr.length]=arr[i];
+				push(newarr,arr[i]);
+			}
+			return newarr;
+		}
+
+		function push(arr,...rest){
+			for(var i=0;i<rest.length;i++){
+				arr[arr.length]=rest[i];
+			}
+			return arr;
+		}
+
+
+
+
+		//万能的删除
+		var arr=[56,9,64,99,9];
+		console.log(spliceCancle(arr,1,3))
+		function spliceCancle(arr,pos,num){
+			var newarr=[];
+			for(i=0;i<arr.length;i++){
+				if(i>=pos && i< pos+num){
+					continue;
+				}
+				newarr[newarr.length]=arr[i]
+			}
+			return newarr;
+		}
+		
+
+		//万能的添加
+		/*
+		1.在pos前，放arr
+		2.等于pos时，放rest
+		3.pos及之后，放arr
+		 */
+		var arr=[45,9,7,98,989,56]
+		console.log(spliceAdd(arr,2,'g','h'))
+		function spliceAdd(arr,pos,...rest){
+			var newarr=[];
+			for(var i=0;i<pos;i++){
+				newarr[newarr.length] = arr[i]
+			}
+			for(var i=0;i<rest.length;i++){
+				newarr[newarr.length] = rest[i]
+			}
+			for(var i=pos;i<arr.length;i++){
+				newarr[newarr.length] = arr[i]
+			}
+			return newarr;
+		}
+ 
+
+
+ 		//万能的添加或删除
+		var arr=[54,99,64,69,45];
+		console.log(splice(arr,2,0,'r','s','t'));
+		function splice(arr,pos,num,...rest){
+			var newarr = spliceCancle(arr,pos,num);
+			if(rest.length>0){
+				newarr = spliceAdd(newarr,pos,...rest);
+			}
+			return newarr;
+		}
+
+
+		//回调函数
+		//map
+		var arr=[45,98,7,5,7]
+		var result=map(arr,function(value){
+			return value*2;
+		})
+		console.log(result);
+		function map(arr,fn){
+			var newarr=[];
+			for(i=0;i<arr.length;i++){
+				newarr[newarr.length]=fn(arr[i])
+			}
+			return newarr;
+		}
+
+		//filter
+		var arr=[4,5,8,5,64,7]
+		filter(arr,function(value){
+			return value%2==0
+		})
+		function filter(arr,fn){
+			var newarr=[];
+			for(i=0;i<arr.length;i++){
+				if(fn(arr[i])){
+					newarr[newarr.length]=fn(arr[i])
+				}
+			}
+		}
+
+		//存在大于0输出true
+		var arr=[45,-79,6,5]
+		var result=some(arr,function(value){
+			return value>0;
+		})
+		console.log(result);
+		function some(arr,fn){
+			for(var i=0;i<arr.length;i++){
+				if(fn(arr[i])){
+					return true;
+				}
+			}
+			return false;
+		}
+
+
+		//全部大于0输出true
+		var arr=[6,8,6,-6,8]
+		var result = every(arr,function (value){
+			return value>0;
+		})
+		console.log(result)
+		function every(arr,fn){
+			for(var i=0;i<arr.length;i++){
+				if(!fn(arr[i]))
+					return false;
+			}
+			return true;
+		}
+
+
+		//递归函数   自己调用自己  不是循环
+		fn(1);
+		function fn(num){
+			if(num<5){
+				fn(++num)
+				alert(num);
+			}
+		}
+
+
+
+		//地址  （浅拷贝）
+		//传值   （深拷贝）
+		var arr=[45,9,6,7,[45,54,5]];
+		var arr1=copy(arr);
+		console.log(arr1);
+		function copy(arr){
+			var newarr=[];
+			for(var i=0;i<arr.length;i++){
+				if(typeof arr[i]=='object'){
+					newarr[i]=copy(arr[i])
+				}else{
+					newarr[i]=arr[i]
+				}	
+			}
+			return newarr;
+		}
+	</script>
+</body>
+</html>
