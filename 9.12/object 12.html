@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Student(name,age,sex,hobby){
+			this.name = name;
+			this.age = age;
+			this.sex = 'nan';
+			this.hobby='basketball';
+			this.music=function(){
+				alert('music')
+			}
+		}
+		let zhangsan = new Student('zhangsan',18,'nan','basketball')
+		let lisi = new Student('lisi',18,'nan','football')
+		// console.log(zhangsan);
+		// alert(zhangsan.age);
+		// alert(zhangsan['age']);
+		// zhangsan['music']();
+		// console.log(lisi);
+
+
+
+		/*遍历对象  for in*/
+		for(let i in zhangsan){
+			console.log(`${i}---${zhangsan[i]}`)
+		}
+
+	//Json
+	/*let computer={
+		brand : 'lenovo',
+		'size' : 17,
+		color : 'black',
+		price : 3700,
+		fun :function(){
+			alert('music');
+		}
+	}
+	console.log(computer);
+	computer.fun();
+	console.log(constructor)*/
+
+
+	//class
+	class Teacher{
+		constructor(){
+			this.name = 'zhangsan';
+			this.age = 25;
+		}
+		study(){
+			alert('学习')
+		}
+	}
+	let zhang= new Teacher();
+	console.log(zhang);
+	</script>
+</body>
+</html>

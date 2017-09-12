@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = new myArray('a','b','c',1,2,'a');
+		let arr1 =new myArray(1,2,5,7,6)
+		arr.push('x','y');
+		console.log(arr);
+		console.log(arr.indexOf('a'));
+		console.log(arr.lastIndexOf('a'));
+		console.log(arr.includes('a'));
+		console.log(arr.reverse());
+		console.log(arr.join('.'));
+		console.log(arr1.sortUp());
+		console.log(arr1.sortDown());
+		console.log(arr1.sort('>'));
+		console.log(arr1.max());
+		console.log(arr1.min());
+		let result=arr.some(function(value){
+			return typeof value =='number';
+		})
+		console.log(result);
+		let result1=arr.every(function(value){
+			return typeof value =='number';
+		})
+		console.log(result);
+		let re=arr1.map(function(value){
+			return value*2
+		})
+		console.log(re);
+		let re1=arr1.filter(function(value){
+			return value%2;
+		})
+		console.log(re1);
+		// console.log(arr1.empty());
+
+		function myArray(){
+			for(let i=0;i<arguments.length;i++){
+				this[i] = arguments[i]
+			}
+			this.length=arguments.length;
+			this.push = function(){
+				for(let i=0;i<arguments.length;i++){
+					this[this.length] = arguments[i];
+					this.length++;
+				}
+			}
+			this.indexOf = function(value){
+				for(let i=0;i<this.length;i++){
+					if(value==this[i]){
+						return i;
+					}
+				}
+				return -1;
+			}
+			this.lastIndexOf=function(value){
+				for(let i=this.length-1;i>-1;i--){
+					if(value == this[i]){
+						return i;
+					}
+				}
+				return -1;
+			}
+			this.includes = function(value){
+				for(let i=0;i<this.length;i++){
+					if(value == this[i]){
+						return true;
+					}
+				}
+				return false;
+			}
+			this.reverse = function(){
+				let newarr=[];
+				for(let i=this.length-1;i>-1;i--){
+					newarr[newarr.length] = this[i];
+				}
+				return newarr;
+			}
+			this.join = function(str){
+				let result='';
+				for(let i=0;i<this.length;i++){
+					if(i!=this.length-1){
+						result += this[i] + str;
+					}else{
+						result += this[i];
+					}
+				}
+				return result;
+			}
+			this.sortUp=function(){
+				for(let i=0;i<this.length;i++){
+					for(let j=i+1;j<this.length;j++){
+						if(this[i]>this[j]){
+							let temp=this[i];
+							this[i]=this[j];
+							this[j]=temp;
+						}
+					}
+				}
+				return this;
+			}
+			this.sortDown=function(){
+				for(let i=0;i<this.length;i++){
+					for(let j=i+1;j<this.length;j++){
+						if(this[i]<this[j]){
+							let temp=this[i];
+							this[i]=this[j];
+							this[j]=temp;
+						}
+					}
+				}
+				return this;
+			}
+			this.sort= function(type){
+				if(type=='>'){
+					return this.sortUp();
+				}else if(type == '<'){
+					return this.sortDown();
+				}
+			}
+			this.max =function(){
+				let max=this[0];
+				for(let i=0;i<this.length;i++){
+					if(max<this[i]){
+						max = this[i];
+					}
+				}
+				return max;
+			}
+			this.min =function(){
+				let min=this[0];
+				for(let i=0;i<this.length;i++){
+					if(min>this[i]){
+						min = this[i];
+					}
+				}
+				return min;
+			}
+			this.some=function(fn){
+				for(let i=0;i<this.length;i++){
+					if(fn(this[i])){
+						return true;
+					}
+				}
+				return false;
+			}
+			this.every=function(fn){
+				for(let i=0;i<this.length;i++){
+					if(fn(this[i])){
+						return true;
+					}
+				}
+				return false;
+			}
+			this.map=function(fn){
+				let newarr=[];
+				for(i=0;i<this.length;i++){
+					newarr[newarr.length]=fn(this[i])
+				}
+				return newarr;
+			}
+			this.filter=function(fn){
+				let newarr=[];
+				for(i=0;i<this.length;i++){
+					if(fn(this[i])){
+						newarr[newarr.length]=this[i];
+					}
+				}
+				return newarr;
+			}
+			// this.empty=function(){
+			// 	let newarr=[];
+			// 	for(i=0;i<this.length;i++){
+			// 		if(!(this[i]==undefined)){
+			// 			newarr[newarr.length]=this[i];
+			// 		}
+			// 	}
+			// 	return newarr;
+			// }
+		}
+
+
+
+
+		//indexOf  lastIndexOf  includes  reverse  join  sort  max  min 去空
+		//some every map filter 
+	</script>
+</body>
+</html>
