@@ -74,7 +74,7 @@
 				return false;
 			}
 			this.reverse = function(){
-				let newarr=new myArray;
+				let newarr=new myArray();
 				for(let i=this.length-1;i>-1;i--){
 					newarr.push = this[i];
 				}
@@ -157,14 +157,14 @@
 				return false;
 			}
 			this.map=function(fn){
-				let newarr=new myArray;
+				let newarr=new myArray();
 				for(let i=0;i<this.length;i++){
 					newarr.push(this[i]);
 				}
 				return newarr;
 			}
 			this.filter=function(fn){
-				let newarr=new myArray;
+				let newarr=new myArray();
 				for(let i=0;i<this.length;i++){
 					if(fn(this[i])){
 						newarr.push(this[i]);
@@ -173,7 +173,7 @@
 				return newarr;
 			}
 			this.empty=function(){
-				let newarr=new myArray;
+				let newarr=new myArray();
 				for(let i=0;i<this.length;i++){
 					if(!(this[i]===undefined)){
 						newarr.push(this[i]);
