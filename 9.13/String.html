@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//object String  Number  Boolean Array Date RegExp
+		
+
+		/*let str = 'sdjdk';
+		console.log(str.charAt(1));
+		console.log(str.charCodeAt(1));
+		console.log(String.fromCharCode(100));*/
+
+		/*let str='abcdabcd';
+		
+		function replaceAll(str,rstr){
+			let star ='*'.repeat(rstr.length);
+			for(i=0;i<rstr.length;i++){
+				star += '*';
+			}
+			while(str.includes(rstr)){
+				str=str.replace(rstr,star);
+			}
+			return str;
+		}
+		let result = replaceAll(str,'bcd');
+		console.log(result);*/
+
+		let url ='http://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.comhttp://baidu.com'
+		function index(str,rstr){
+			let star ='*'.repeat(rstr.length)
+			let a=[];
+			while(str.includes(rstr)){	
+				a.push(str.indexOf(rstr));
+				str=str.replace(rstr,star);
+			}
+			return a;
+		}
+		let result1 = index(url,'baidu');
+		console.log(result1);
+
+
+		function index1(str){
+			let arr=[];
+			for(i=0;i<str.length;i++){
+				if(str.substr(i,5)=='baidu'){
+					arr.push(i)
+				}
+			}
+			return arr;
+		}
+		let re= index1(url);
+		console.log(re);
+	</script>
+</body>
+</html>

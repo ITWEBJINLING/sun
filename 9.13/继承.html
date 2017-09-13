@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name='zhangsan';
+			this.age=18;
+			this.eat = function(){
+				alert('eat')
+			}
+		}
+		Person.prototype={
+			study : function(){
+				alert('study')
+			}
+		}
+		Person.prototype.aa=function(){
+			alert(1);
+		}
+		function Student(){
+			this.class='wuif1707-1';
+			this.number='001';
+			this.skill = function(){
+				alert('fullStuck')
+			}
+		}
+		Student.prototype= new Person();
+		Student.prototype.play= function(){
+				alert('play')
+		}
+		let zhangsan =new Student();
+		console.log(zhangsan);
+
+		console.log(Student.prototype.__proto__ == Person.prototype)
+	</script>
+</body>
+</html>

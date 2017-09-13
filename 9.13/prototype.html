@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name='zhangsan';
+			this.age=18;
+			this.sex='nan';
+		}
+		Person.prototype={
+			say : function(){
+				alert('学习');
+			}
+		}
+		Person.prototype.eat=function(){
+			alert('eat');
+		}
+		let zhangsan = new Person;
+		zhangsan.eat();		
+		console.log(zhangsan);
+
+		delete zhangsan.name;
+		alert(zhangsan.name);
+	</script>
+</body>
+</html>
