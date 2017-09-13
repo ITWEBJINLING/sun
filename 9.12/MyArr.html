@@ -6,7 +6,7 @@
 </head>
 <body>
 	<script>
-		let arr = new myArray('a','b','c',1,2,'a');
+		let arr = new myArray('a','b','c',1,2,'a',undefined);
 		let arr1 =new myArray(1,2,5,7,6)
 		arr.push('x','y');
 		console.log(arr);
@@ -36,7 +36,7 @@
 			return value%2;
 		})
 		console.log(re1);
-		// console.log(arr1.empty());
+		console.log(arr1.empty());
 
 		function myArray(){
 			for(let i=0;i<arguments.length;i++){
@@ -74,9 +74,9 @@
 				return false;
 			}
 			this.reverse = function(){
-				let newarr=[];
+				let newarr=new myArray;
 				for(let i=this.length-1;i>-1;i--){
-					newarr[newarr.length] = this[i];
+					newarr.push = this[i];
 				}
 				return newarr;
 			}
@@ -157,30 +157,30 @@
 				return false;
 			}
 			this.map=function(fn){
-				let newarr=[];
-				for(i=0;i<this.length;i++){
-					newarr[newarr.length]=fn(this[i])
+				let newarr=new myArray;
+				for(let i=0;i<this.length;i++){
+					newarr.push(this[i]);
 				}
 				return newarr;
 			}
 			this.filter=function(fn){
-				let newarr=[];
-				for(i=0;i<this.length;i++){
+				let newarr=new myArray;
+				for(let i=0;i<this.length;i++){
 					if(fn(this[i])){
-						newarr[newarr.length]=this[i];
+						newarr.push(this[i]);
 					}
 				}
 				return newarr;
 			}
-			// this.empty=function(){
-			// 	let newarr=[];
-			// 	for(i=0;i<this.length;i++){
-			// 		if(!(this[i]==undefined)){
-			// 			newarr[newarr.length]=this[i];
-			// 		}
-			// 	}
-			// 	return newarr;
-			// }
+			this.empty=function(){
+				let newarr=new myArray;
+				for(let i=0;i<this.length;i++){
+					if(!(this[i]===undefined)){
+						newarr.push(this[i]);
+					}
+				}
+				return newarr;
+			}
 		}
 
 
