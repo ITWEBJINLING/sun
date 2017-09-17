@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*let arr=['a','b','c','d']
+		let newarr=[];
+		for(let i=0;i<3;i++){                     就需要循环3次
+			let index =Math.floor(Math.random()*arr.length);
+			//用while判断   从而去重
+			newarr.push(arr[index]);
+		}
+		console.log(newarr);*/
+
+		//不关心循环几次，最终是要放进去3个
+		/*let arr=['a','b','c','d','e']
+		let newarr=[];
+			while(newarr.length<3){
+				let index=Math.floor(Math.random()*arr.length);
+				if(!newarr.includes(arr[index])){
+					newarr.push(arr[index]);
+				}
+			}
+			
+		console.log(newarr);*/
+		
+
+		/*let arr=['a','b','c','d']
+		let newarr=[];
+		for(let i=0;i<3;i++){                     //就需要循环3次
+			let index =Math.floor(Math.random()*arr.length);
+			if(newarr.includes(arr[index])){
+				i--;
+			}else{
+				newarr.push(arr[index])
+			}
+		}
+		console.log(newarr);
+*/
+
+		let arr=['a','b','c','d']
+		let newarr=[];
+		for(let i=0;i<3;i++){                    
+			let index =Math.floor(Math.random()*arr.length);
+			while(newarr.includes(arr[index])){
+				index =Math.floor(Math.random()*arr.length);
+			}
+			newarr.push(arr[index]);
+		}
+		console.log(newarr);
+	</script>
+</body>
+</html>

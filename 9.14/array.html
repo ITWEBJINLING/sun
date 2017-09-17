@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*let arr=[1,5,8,8];
+		let arr1=[65,9,9564,6,8]
+		arr.push(...arr1)
+		console.log(arr);
+
+
+		let newarr=arr.filter(function(value,index,obj) {
+			return value%2==0;
+		});
+		console.log(newarr)
+
+		let result = arr.map((value,index)=>value+indx)
+		console.log(result)
+		
+
+		let arr=[1,2,3,4,5,1,2,3];
+		function re(arr){
+			var newarr=[];
+			for(i=0;i<arr.length;i++){
+				if(!(newarr.includes(arr[i]))){
+					newarr.push(arr[i]);
+				}
+			}
+			return newarr;
+		}
+		console.log(re(arr));*/
+
+/*
+		let arr=[1,2,3,4,5,1,2,3]
+		function re(arr){
+			let newarr=[];
+			for(let i=0;i<arr.length;i++){
+				let flag=true;
+				for(let j=i+1;j<arr.length;j++){
+					if(arr[i]==arr[j]){
+						flag=false;
+						break;
+					}
+				}
+				if(flag){
+					newarr.push(arr[i]);
+				}
+			
+			}
+			return newarr;
+		}
+		console.log(re(arr));
+*/
+
+		let arr=[1,2,3,4,5,1,2,3];
+		Array.prototype.re=function(){
+			let newarr=[];
+			for(let i=0;i<this.length;i++){
+				let flag=true;
+				for(let j=i+1;j<this.length;j++){
+					if(this[i]==this[j]){
+						flag=false;
+						break;
+					}
+				}
+				if(flag){
+					newarr.push(this[i]);
+				}
+			
+			}
+			return newarr;
+			}
+		console.log(arr.re());
+	</script>
+</body>
+</html>

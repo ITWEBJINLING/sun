@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;	
+}
+html,body{
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+}
+main{
+	width: 350px;
+	height: 180px;
+	background: #fff;
+	padding: 15px 50px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+h3{
+	text-align: center;
+	font-size: 20px;
+	line-height: 50px;
+}
+input{
+	width: 100%;
+	outline: none;
+	margin-bottom: 10px;
+	border: 1px solid #333;
+	padding: 3px;
+	box-sizing: border-box;
+}
+input:focus{
+	border: 1px solid lightskyblue;
+}
+button{
+	width: 100%;
+	background: lightskyblue;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	line-height: 30px;
+}
