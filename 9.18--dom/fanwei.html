@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 1226px;
+			height: 450px;
+			background: #ff6700;
+			margin: 0 auto;
+			position: relative;
+		}
+		.circle{
+			width: 125px;
+			height: 15px;
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.circle li{
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #ccc;
+			margin-right: 10px;
+			float: left;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="circle">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+		let ul =document.getElementsByClassName('circle');
+		let li = ul[0].getElementsByTagName('li');
+		for(let i=0;i<li.length;i++){
+			li[i].onclick=function(){
+				li[i].style.background='#666';
+			}
+		}
+	</script>
+</body>
+</html>

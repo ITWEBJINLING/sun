@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			background: #ff6700;
+			margin: 30px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		let box=document.getElementsByClassName('box')[0];
+		let step=10;
+		let t = setInterval(fn,60);
+		function fn(){
+			let w = parseInt(getComputedStyle(box,null).width);
+			if(w>500){
+				step = -step;
+			}else if(w<300){
+				step = -step;
+			}
+			box.style.width = `${w + step}px`;
+
+		}
+	</script>
+</body>
+</html>
