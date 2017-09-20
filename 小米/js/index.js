@@ -67,13 +67,13 @@ let num = 0;
 		function fn1(){
 			num--;
 			if(num<0){
-				num=0;
+				num=bannerli.length-1;
 			}
 			for(let i=0;i<bannerli.length;i++){
 					bannerli[i].style.display='none';
 					btn[i].className='yuan1';
 				}
 			bannerli[num].style.display='block'
-			btn[i].className='yuan2'
+			btn[num].className='yuan2'
 		}
 }
