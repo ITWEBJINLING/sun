@@ -370,6 +370,7 @@ aside{
 	height: 500px;
 	position: relative;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .banner-img li:first-child{
 	width: 100%;
@@ -380,55 +381,14 @@ aside{
 	top: 0;
 	left: 0;
 }
-.banner-img li:nth-child(2){
+.banner-img li{
 	width: 100%;
 	height: 500px;
 	background: #FF5162;
 	float: left;
 	position: absolute;
 	top: 0;
-	left: 0;
-	display: none;
-}
-.banner-img li:nth-child(3){
-	width: 100%;
-	height: 500px;
-	background: #FF5162;
-	float: left;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-}
-.banner-img li:nth-child(4){
-	width: 100%;
-	height: 500px;
-	background: #FF5162;
-	float: left;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-}
-.banner-img li:nth-child(5){
-	width: 100%;
-	height: 500px;
-	background: #FF5162;
-	float: left;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-}
-.banner-img li:nth-child(6){
-	width: 100%;
-	height: 500px;
-	background: #FF5162;
-	float: left;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
+	left: 100%;
 }
 .banner-img a{
 	display: block;
