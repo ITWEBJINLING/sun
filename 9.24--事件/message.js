@@ -13,25 +13,35 @@ $(function(){
 		nstr=str;
 		console.log(nstr)
 		if(e.keyCode==13&&e.keyCode==17){
-			fn();
-		}
-		if(e.keyCode==13){
-			fn();
-		}
-	})	
-	
-		bt.addEventListener('click',function(){
 			if(nstr==''){
 				alert('请输入留言内容')
 			}else{
 				fn();
 			}
-		})
+		}
+		if(e.keyCode==13){
+			if(nstr==''){
+				alert('请输入留言内容')
+			}else{
+				fn();
+			}
+		}
+	})	
+	
+	bt.addEventListener('click',function(){
+		if(nstr==''){
+			alert('请输入留言内容')
+		}else{
+			fn();
+		}
+	})
 	function fn(){
 		text.value=null;
 		let li = document.createElement('li');
 		li.className='li';
 		li.innerHTML=nstr;
 		ul.appendChild(li)
+		nstr='';
+		span.innerHTML=`当前可输入字符数为${100-nstr.length}`;
 	}
 })
