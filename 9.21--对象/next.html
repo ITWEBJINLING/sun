@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="next.js"></script>
+</head>
+<body>
+	<section>
+		<main>
+			<div class="bigbox">
+				<p>p1</p>
+				<div class="box">
+					<h1>1</h1>
+				</div>
+				<div>2</div>
+				<span>span</span>
+				<h2></h2>
+			</div>
+		</main>
+	</section>
+	<script>
+		window.onload=function(){
+			let box =document.querySelector('div .box')
+			let h2 =document.querySelector('h2')
+			//寻找当前元素后面的指定兄弟元素
+			let result =next(box,'h2')
+			console.log(result);
+			//寻找当前元素后面的所有兄弟元素
+			let result1 = nextAll(h2)
+			console.log(result1)
+			//寻找当前元素前面的指定兄弟元素
+			let result2 =previous(box,'span')
+			// console.log(result2);
+			//寻找当前元素前面的所有兄弟元素
+			let result3 = previousAll(box)
+			console.log(result3)
+			//寻找当前元素相近的父元素
+			let result4= closed(box,'main')
+			console.log(result4)
+			let result5= closedAll(box)
+			console.log(result5)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="goujian.js"></script>
+	<style>
+		.box{
+			width: 500px;
+			height: 300px;
+			border: 2px solid seagreen;
+		}
+		.circle{
+			width: 100px;
+			height: 100px;
+			background: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span>span</span>
+		<p>p</p>
+		<h2>h2</h2>
+	</div>
+	<script>
+	window.onload=function(){
+		let box = document.querySelector('.box');
+		let span = document.querySelector('span');
+		let p = document.querySelector('p');
+		let h2 = document.querySelector('h2');
+		let divs = document.createElement('div')
+		divs.className='circle'
+		///////////在子元素的前面添加一个元素/////////
+		// box.insertBefore(divs,span)
+		
+		
+		///////////在子元素的后面添加一个元素/////////
+		// box.insertAfter(divs,span)
+		
+		
+		
+		///////////在父元素的最前面添加一个元素/////////
+		// box.prepend(divs)
+		
+		
+		///////////将子元素插入到父元素的最后///////////////
+		 // divs.appendto(box)
+		 
+		 
+		 
+		 
+		 // /////////////////将子元素插入到父元素的最前面////////
+		 divs.prependto(box)
+	}
+	</script>
+</body>
+</html>

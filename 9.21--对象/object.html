@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="object.js"></script>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background: #ff6700;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		window.onload=function(){
+			let box=document.getElementsByClassName('box')[0];
+			let obj = new float(box);
+			obj.move();
+			box.onmouseover=function(){
+				obj.stop();
+			}
+			box.onmouseout=function(){
+				obj.move();
+			}
+			window.onresize=function(){
+				obj.resize();
+			}
+		}
+	</script>
+</body>
+</html>
+
+<!-- Array.from  转换成数组
+Array.prototype.forEach.call(div,function(Element){
+	console.log(element)
+}) -->

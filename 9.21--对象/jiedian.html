@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		hello
+		<div class="box1"></div>
+		<p>文字</p>
+		<!-- 注释 -->
+	</div>
+	<script>
+	/*                用childNodes模拟children            */
+	window.onload=function(){
+	////////////////////////////////forEach()////////////////////
+	function children(parent){
+		let newarr=[];
+		let all = parent.childNodes;
+		all.forEach(element=>{
+			if(element.nodeType==1){
+				newarr.push(element)
+			}
+		})
+		return newarr;
+	}
+
+////////////////////////////////////filter////////////////////////
+/*	function children(parent){
+		let all = parent.childNodes;
+		let arr=Array.from(all);
+		let newarr = arr.filter(element => element.nodeType==1)
+			return newarr;
+		console.log(newarr)
+		}*/
+		function firstChild(parent){
+		let newarr=[];
+		let all = parent.childNodes;
+		all.forEach((element)=>{
+			if(element.nodeType==1){
+				newarr.push(element);
+			}
+		})
+		return newarr;
+	}
+	
+		let box = document.getElementsByClassName('box')[0];
+
+		console.log(firstChild(box));
+	}
+
+
+	//模拟第一个   最后一个
+
+	</script>
+</body>
+</html>

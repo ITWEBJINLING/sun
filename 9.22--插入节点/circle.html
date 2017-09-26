@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>document</title>
+	<style>
+		.circle{
+			width: 1px;
+			height: 1px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+		.box{
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: seagreen;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 1s;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="circle"></div>
+	<!-- 用div画圆 -->
+	<script>
+		window.onload=function(){
+			let circle=document.getElementsByClassName('circle')[0];
+			function yuan(num,r){
+					let deg=360/30;
+				for(let i=0;i<num;i++){
+					if(i%30==0){
+						r+=30;
+					}
+					let divs=document.createElement('div');
+					divs.className='box';
+					let rad = deg*i*Math.PI /180;  //弧度
+					let lefts=r * Math.cos(rad);    
+					let tops=r * Math.sin(rad);
+					let a=Math.round(Math.random()*255);
+					let b=Math.round(Math.random()*255);
+					let c=Math.round(Math.random()*255);
+					setTimeout(function(){
+						divs.style.transitionDelay=`${i*100}ms`
+						divs.style.left=lefts+'px';
+						divs.style.top=tops+'px';
+						divs.style.background=`rgb(${a},${b},${c})`;
+						}, 200)
+					
+					circle.appendChild(divs);
+				}
+			}
+			yuan(90,200)
+
+		}
+	</script>
+</body>
+</html>

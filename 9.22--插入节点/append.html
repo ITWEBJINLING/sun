@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #ff6700;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 1s ease 1s;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		window.onload=function(){
+			function some(num){
+				for(let i=0;i<num;i++){
+					let divs=document.createElement('div')
+					divs.className='box';
+					
+					let lefts=Math.floor((innerWidth-100)*Math.random());
+					let tops=Math.floor((innerHeight-100)*Math.random());
+					let widths=Math.floor(Math.random()*70+30);
+					let a=Math.round(Math.random()*255);
+					let b=Math.round(Math.random()*255);
+					let c=Math.round(Math.random()*255);
+					setTimeout(function(){
+						divs.style.transitionDelay=`${i*20}ms`
+						divs.style.left=lefts+'px'
+						divs.style.top=tops+'px'
+					},5)
+					divs.style.width=widths+'px'
+					divs.style.height=widths+'px'
+					
+					divs.style.background=`rgb(${a},${b},${c})`;
+					// divs.style.background=color();
+					document.body.appendChild(divs) 
+				}
+			}
+			/*function color(){
+				let str='rgb('
+				for(let i=0;i<3;i++){
+					let num=Math.round(Math.random()*255)
+					str += num +','
+				}
+				str = str.slice(0,-1)+')'
+				return str;
+			}*/
+			some(50);
+		}
+	</script>
+</body>
+</html>
