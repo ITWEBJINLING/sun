@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="300" height="300"></canvas>
+	<script>
+		/*let canvas=document.querySelector('canvas')
+		let ctx = canvas.getContext("2d");
+		function ploy(n,r){
+			let rad = Math.PI *2/n;
+			ctx.beginPath();
+			ctx.moveTo(150+r, 150)
+			for(i=0;i<n;i++){
+				let x = 150+r*Math.cos(rad*i),
+					y = 150+r*Math.sin(rad*i);
+				ctx.lineTo(x, y);
+			}
+			ctx.closePath();
+			ctx.stroke();
+		}
+		ploy(5,100)*/
+
+		let canvas=document.querySelector('canvas')
+		let ctx = canvas.getContext("2d");
+		function ployJ(n,r){
+			let rad = Math.PI /n;
+			// ctx.beginPath();
+			ctx.moveTo(150+r, 150)
+			for(i=0;i<2*n;i++){
+				let r1 = i%2==0?r:r/2
+				let x = 150+r1*Math.cos(rad*i),
+					y = 150+r1*Math.sin(rad*i);
+				ctx.lineTo(x, y);
+			}
+			ctx.closePath();
+			ctx.stroke();
+		}
+		ployJ(5,100)
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border:2px solid #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="300" height="300"></canvas>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+        ctx.font='bold 30px sans-serif'
+        ctx.textAlign='left'
+        ctx.textBaseline='middle'
+        ctx.fillText('hello',100,100)
+    </script>
+</body>
+</html>

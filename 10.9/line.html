@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 2px solid #ff6670;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="600"></canvas>
+	<script>
+		let canvas=document.querySelector('canvas')
+        let ctx = canvas.getContext("2d");
+        let arr=[];
+        canvas.onmousedown=function(e){
+            let cx = e.offsetX,
+				cy = e.offsetY;
+            canvas.onmousemove=function(e){
+                let ox = e.offsetX,oy = e.offsetY;
+				ctx.clearRect(0,0, canvas.offsetWidth, canvas.offsetHeight);
+				if(!arr.length){return;}
+				ctx.putImageData(arr[arr.length-1],0,0)
+				ctx.beginPath();
+				ctx.moveTo(cx, cy);
+				ctx.lineTo(ox, oy);
+//				ctx.closePath();
+				ctx.stroke();    //线
+//				let r = Math.sqrt(Math.pow(ox-cx,2)+Math.pow(oy-cy,2));
+				/*ctx.arc(ox,oy,r,0,Math.PI*2)
+				ctx.closePath();
+				ctx.stroke();*/
+//				ployJ(5,r,ox,oy)  //多边形
+				console.log(arr)
+			}
+			canvas.onmouseup=function(){
+				// canvas.onmousedown=null;
+				arr.push(ctx.getImageData(0,0,canvas.offsetWidth,canvas.offsetHeight))
+				canvas.onmousemove=null;
+			}
+		}
+		/*function ployJ(n,r,x1,y1){
+			let rad = Math.PI /n;
+			ctx.beginPath();
+			ctx.moveTo(x1+r, y1)
+			for(i=0;i<2*n;i++){
+				let r1 = i%2==0?r:r/2
+				let x = x1+r1*Math.cos(rad*i),
+					y = y1+r1*Math.sin(rad*i);
+				ctx.lineTo(x, y);
+			}
+			ctx.closePath();
+			ctx.stroke();
+		}*/
+	</script>
+</body>
+</html>

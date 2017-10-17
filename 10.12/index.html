@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="rem.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        html,body{
+            font-size: 100px;
+        }
+        .box{
+            width:100%;
+            height:3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .he{
+            width:600%;
+            height: 3rem;
+            overflow: hidden;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .he>li{
+            width:7.5rem;
+            height:3rem;
+            background: pink;
+            float: left;
+            transform: translateX(0);
+        }
+        li>img{
+            display: block;
+            width: 100%;
+            height:100%;
+        }
+        .circle{
+            width:15%;
+            height:0.15rem;
+            position: absolute;
+            bottom:0.2rem;
+            left:0;
+            right:0;
+            margin-left:auto;
+            margin-right:auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .circle>li{
+            width:0.15rem;
+            height:0.15rem;
+            border-radius: 50%;
+            background: #5f5750;
+        }
+        .circle>li:first-child{
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="he">
+            <li><img src="img/banner.jpg" alt=""></li>
+            <li><img src="img/banner1.jpg" alt=""></li>
+            <li><img src="img/banner2.jpg" alt=""></li>
+        </ul>
+        <ul class="circle">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        window.addEventListener('load',function(){
+            let ul = document.querySelector('.he')
+            let w=window.innerWidth,startx,mx,sx;
+            let btns = document.querySelectorAll('.circle>li')
+            /*  该内容和宽度*/
+            ul.innerHTML += ul.innerHTML;
+            let len = ul.childElementCount;
+            ul.style.width = `${len * w}`
+            ul.addEventListener('touchstart',function(e){
+                let touch=e.changedTouches[0];
+                sx = touch.clientX;
+                startx = this.offsetLeft;
+                this.style.transition='none';
+                let num = startx/w;
+                if(num == 0){
+                    num = -3;
+                }
+                if(num == 1-len){
+                    num = -2
+                }
+                this.style.left = `${num * w}px`
+                startx = this.offsetLeft;
+            })
+             ul.addEventListener('touchmove',function(e){
+                 let touch=e.changedTouches[0];
+                 mx = touch.clientX;
+                 let lefts = startx + mx-sx;
+                 this.style.left = lefts+'px';
+             })
+             ul.addEventListener('touchend',function(){
+                 let lefts = this.offsetLeft;
+                 let num = Math.round(lefts/w);
+                 let n = -num%3;
+                 for(let i=0;i<btns.length;i++){
+                     btns[i].style.background = '#5f5750';
+                 }
+                 btns[n].style.background= '#f1f1f1'
+                 this.style.left = `${num * w}px`
+                 this.style.transition='all .1s';
+             })
+
+
+
+            })
+
+    </script>
+</body>
+</html>

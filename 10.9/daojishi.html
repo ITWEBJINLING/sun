@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border:2px solid #ff6670;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="300" height="300"></canvas>
+    <script>
+     /*   let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');*/
+        function timer(start,end){
+            window.setTimeout(function(){
+                circle(start/100);
+                start++;
+                if(start<end+1){
+                    timer(start,end);
+                }
+            },60);
+        }
+        function circle(percent){
+            let p=(percent*100).toFixed(0);
+           let canvas=document.querySelector('canvas');
+           let ctx=canvas.getContext("2d");
+            ctx.beginPath();
+            if(percent==1){
+                ctx.arc(150,150,100,0,Math.PI*2,false);
+            }else if(percent==0){
+                ctx.arc(150,150,100,0,0,true);
+            }else{
+                ctx.arc(150,150,100,-Math.PI/2,-Math.PI/2+Math.PI*2*percent,false);
+            }
+            ctx.stroke();
+            //生成中间百分比文字
+            ctx.font="20px arial";
+            ctx.fillStyle="#000000";
+            ctx.clearRect(125,150,50,50)
+            ctx.fillText(p+"%",125,150);
+        }
+        timer(0,80)
+    </script>
+</body>
+</html>

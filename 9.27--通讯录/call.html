@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width">
+	<script src="rem.js"></script>
+	<script src="call.js"></script>
+	<style>
+		*{
+			margin:0 ;
+			padding: 0;
+			list-style: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			-weblit-text-size-adjust: none;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		body{
+			background: #f8f8f8;
+		}
+		.title{
+			width: 100%;
+			text-align: center;
+			font-size: 0.32rem;
+			color: #333;
+			line-height: 1rem;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			background: #f8f8f8;
+		}
+		.title1{
+			height: 1rem;
+		}
+		header{
+			width: 100%;
+			height: 1rem;
+			padding: 0.1rem 0.15rem;
+			position: fixed;
+			top: 1rem;
+			left: 0;
+			z-index: 999;
+			background: #f8f8f8;
+		}
+		.head{
+			width: 100%;
+			height: 1rem;
+		}
+		input{
+			width: 100%;
+			height: 0.8rem;
+			border: none;
+			outline: none;
+			padding: 0 0.15rem;
+			border-radius: 0.05rem;
+			float: left;
+		}
+		dt{
+			width: 100%;
+			height: 0.8rem;
+			background: #f1f1f1;
+			font-size: 0.3rem;
+			color: #333;
+			padding: 0 0.15rem;
+			line-height: 0.8rem;
+		}
+		dd{
+			width: 100%;
+			height: 1.2rem;
+			padding: 0 0.2rem;
+			font-size: 0.4rem;
+			line-height: 1.2rem;
+			color: #333;
+			border-bottom: 0.01rem solid #f1f1f1;
+		}
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			color: #333;
+		}
+		main{
+			width: 100%;
+			height: 2rem;
+			background: #f8f8f8;	
+			position: fixed;
+			top: 0;
+			left: 0;	
+		}
+		ul{
+			width: 1rem;
+			height: auto;
+			position: fixed;
+			right: 0rem;
+			top: 50%;
+			background: #f1f1f1; 
+		}
+		li{
+			width: 100%;
+			height: 1rem;
+			border-bottom: 0.01rem solid #f1f1f1;
+			font-size: 0.3rem;
+			line-height: 1rem;
+			text-align: center;
+			color: #333;
+		}
+		.mask{
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		.word{
+			width: 100%;
+			height: 0.8rem;
+			background: #f1f1f1;
+			font-size: 0.3rem;
+			color: #333;
+			padding: 0 0.15rem;
+			line-height: 0.8rem;
+			position: fixed;
+			z-index: 999;
+			top: 2rem;
+			left: 0;
+			/* display: none; */
+		}
+		.word1{
+			width: 100%;
+			height: 0.8rem;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+		<div class="title1"></div>
+
+		<div class="head"></div>
+	<main>
+		<div class="title">联系人</div>
+		<header>
+			<input type="text" id="num" placeholder="搜索" value="">
+		</header>
+	</main>
+		<div class="word"></div>
+	<dl>
+
+	</dl>
+	<ul>
+		
+	</ul>
+	<div class="mask"></div>
+</body>
+</html>

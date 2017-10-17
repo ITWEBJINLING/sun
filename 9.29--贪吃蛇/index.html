@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.sence{
+			width: 600px;
+			height: 600px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+			background: #000;
+			border-right : 1px solid #000;
+			border-top : 1px solid #000;
+		}
+		.block{
+			width: 29px;
+			height: 29px;
+			margin-left: 1px;
+			margin-bottom: 1px;
+			background: #fff;
+			float: left;
+		}
+		.hot{
+			background: green;
+			/* background: green!important;优先级最高 */
+		}
+		.color{
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="sence"></div>
+	<script>
+		window.onload=function(){
+			let obj = new Snake;
+			obj.start();
+			/*document.onkeydown=function(){
+
+			}*/
+		}
+	</script>
+	<script src="index.js"></script>
+</body>
+</html>

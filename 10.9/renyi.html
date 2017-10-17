@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 2px solid #ff6670;
+		}
+	</style>
+</head>
+<body>
+<canvas width="600" height="600"></canvas>
+<script>
+	let canvas=document.querySelector('canvas')
+		let ctx = canvas.getContext("2d");
+		canvas.onmousedown=function(e){
+			let cx = e.offsetX,
+				cy = e.offsetY;
+				ctx.beginPath();
+				ctx.moveTo(cx, cy);  //不需要附回去
+			canvas.onmousemove=function(e){
+				let ox = e.offsetX,oy = e.offsetY;
+				/*ctx.beginPath();
+				ctx.moveTo(cx, cy);*/
+				ctx.lineTo(ox, oy);
+				ctx.stroke();
+				cx = ox;
+				cy = oy;
+			}
+			canvas.onmouseup=function(){
+				// canvas.onmousedown=null;
+				canvas.onmousemove=null;
+			}
+		}
+	</script>
+</body>
+</html>

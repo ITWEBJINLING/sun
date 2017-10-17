@@ -1,0 +1,24 @@
+/* 
+	属性：  
+		字母 个数 速度 位置 生命  分数
+	方法
+		产生字符  下落  消除 
+	
+
+function
+	属性：
+	存字符
+	页面元素  this.current 
+	个数
+	速度
+	方法：   getChars 获取字符 训话
+	getChar 从数组取元素
+	  创建div 设置位置 距离浏览器左右各200
+
+
+
+	封装：  start {
+		getchars
+	}
+	drop  掉落
+ */

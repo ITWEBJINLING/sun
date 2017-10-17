@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span></span>天<span></span>小时<span></span>分钟<span></span>秒
+	<script>
+		/*// let date = new Date('2017/10/1 14:24:00');
+		let date = new Date(2017,10,1,14,30,0);  //-1
+		console.dir(date)  // getFullYear() 年  getMonth()  月 getDate()  几号  getDay  周几   getHours // 事件    getTime  距1970事件*/
+		let span = document.querySelectorAll('span')
+		/*fn()
+		setInterval(fn, 1000)
+		function fn(){
+			let arr =[]
+			let now = new Date();
+			let zq= new Date('2017/10/4 0:0:0');
+			let cha = Math.floor((zq.getTime()-now.getTime())/1000);
+			let day = Math.floor(cha/(60*60*24));
+			arr.push(day)
+			cha = cha%(60*60*24)
+			let hours = Math.floor(cha/(60*60))
+			arr.push(hours)
+			cha = cha%(60*60);
+			let min = Math.floor(cha/60)
+			arr.push(min)
+			let sec = cha%(60);
+			arr.push(sec)
+			arr.forEach((element,index)=>{
+				span[index].innerText=element;
+			})
+		}*/
+			fn1();
+			setInterval(fn1, 1000)
+			function fn1(){
+				let arr =[]
+				let now = new Date();
+				let year = now.getFullYear();
+				let month = now.getMonth();
+				let date = now.getDate();
+				let hours = now.getHours();
+				let min = now.getMinutes();
+				let sec= now.getSeconds();
+				let next = new Date(year,month,date,hours,25,sec)
+				let cha = 600--;
+				// console.log(next.getTime()-now.getTime());
+				let day = Math.floor(cha/(60*60*24));
+				console.log(day)
+				arr.push(day)
+				cha = cha%(60*60*24)
+				let shi = Math.floor(cha/(60*60))
+				arr.push(shi)
+				cha = cha%(60*60);
+				let fen = Math.floor(cha/60)
+				arr.push(fen)
+				let miao = cha%(60);
+				arr.push(miao)
+				arr.forEach((element,index)=>{
+					span[index].innerText=element;
+				})
+			}
+
+	</script>
+</body>
+</html>

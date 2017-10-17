@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			background:url('img/bj33.jpg') no-repeat center/cover;
+		}
+		.char{
+			width: 60px;
+			height: 60px;
+			font-size: 20px;
+			text-align: center;
+			line-height: 60px;
+			color: #333;
+			position: absolute;
+		}
+		.score,.guanka,.life,.times{
+			width: 200px;
+			height: 40px;
+			background: #eec9a7;
+			opacity: 0.8;
+			border-radius: 20px;
+			position: absolute;
+			top: 80px;
+			left: 10px;
+			font-size: 18px;
+			color: #fff;
+			text-align: center;
+			line-height: 40px;
+			display: none;
+		}
+		.score{
+			top: 140px;
+		}
+		.life{
+			top: 200px;
+		}
+		.times{
+			top: 20px;
+		}
+		span{
+			font-size: 18px;
+			color: #333;
+			line-height: 40px;
+			margin-left: 2px;
+		}
+		button{
+			width: 150px;
+			height: 50px;
+			border: none;
+			outline: none;
+			border-radius: 25px;
+			position: fixed;
+			opacity: 0.8;
+			top: 50%;
+			left: 50%;
+			margin-top: -25px;
+			margin-left: -50px;
+			background: #eec9a7;
+			font-size: 20px;
+			color: #fff;
+			line-height: 50px;
+			cursor: pointer;
+			z-index: 999;
+		}
+		.restart,.restart1{
+			width: 100px;
+			height: 30px;
+			background: #eec9a7;
+			color: #fff;
+			font-size: 18px;
+			line-height: 30px;
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			left: 50%;
+			margin-left: -80px;
+			display: none;
+			z-index: 999;
+		}
+		.restart1{
+			top: 260px;
+			margin-top: 0px;
+			left: 58px;
+			margin-left: 0px;
+			display: none;
+		}
+		.next,.exit{
+			width: 100px;
+			height: 30px;
+			background: #73eca8;
+			font-size: 18px;
+			color: #fff;
+			line-height: 30px;
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			left: 50%;
+			margin-left: 80px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>开始游戏</button>
+	<div class="times">关卡<span></span></div>
+	<div class="guanka">目标分数为<span></span></div>
+	<div class="score">当前得分为<span></span></div>
+	<div class="life">当前生命值为<span>10</span></div>
+	<button class="restart1">重新开始</button>
+	<button class="restart">重新开始</button>
+	<button class="exit">结束游戏</button>
+	<button class="next">下一关</button>
+	<script>
+		window.onload=function(){
+			let game = new Game();
+			let bt = document.querySelector('button')
+			let guan = document.querySelector('.guanka');
+			let score = document.querySelector('.score');
+			let life = document.querySelector('.life');
+			let times = document.querySelector('.times');
+			let rbts1 = document.querySelector('.restart1');
+			bt.onclick=function(){
+				rbts1.style.display='block'
+				score.style.display='block'
+				guan.style.display='block'
+				life.style.display='block'
+				times.style.display='block'
+				game.start();
+				bt.style.display="none";
+			}
+			rbts1.onclick=function(){
+				game.score=0;
+				game.score.innerHTML = `${game.score}`
+				game.restart();
+				game.nbts.style.display="none"
+				game.rbts.style.display="none"
+			}
+			// game.start();
+
+
+		}
+	</script>
+	<script src="game.js"></script>
+</body>
+</html>

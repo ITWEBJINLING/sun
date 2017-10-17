@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        canvas{
+            border: 2px solid #ff6670;
+            position: relative;
+        }
+        .box{
+            width:600px;
+            height:600px;
+            position: relative;
+        }
+        .eraser{
+            width:50px;
+            height:50px;
+            background: #ff0000;
+            position: absolute;
+            top:0;
+            left:0;
+            display: none;
+        }
+        .opacity{
+            width:600px;
+            height:600px;
+            /*background: #ff0000;*/
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <canvas width="600" height="600"></canvas>
+    <button>撤销</button>
+    <button>画笔</button>
+    <button>橡皮</button>
+    <div class="eraser"></div>
+    <div class="opacity"></div>
+</div>
+<script>
+    let canvas=document.querySelector('canvas')
+    let opacity=document.querySelector('.opacity')
+    let btn = document.querySelectorAll('button');
+    let eraser = document.querySelector('.eraser');
+    let ctx = canvas.getContext("2d");
+    let arr=[];
+    console.log(btn[2])
+    btn[1].onclick=function() {
+        opacity.onmousedown = function (e) {
+            let cx = e.offsetX,
+                cy = e.offsetY;
+            opacity.onmousemove = function (e) {
+                let ox = e.offsetX, oy = e.offsetY;
+                ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+                if (arr.length) {
+                    ctx.putImageData(arr[arr.length - 1], 0, 0)
+                }
+                ctx.beginPath();
+                ctx.moveTo(cx, cy);
+                ctx.lineTo(ox, oy);
+//				ctx.closePath();
+                ctx.stroke();    //线
+                console.log(arr)
+            }
+            opacity.onmouseup = function () {
+                arr.push(ctx.getImageData(0, 0, canvas.offsetWidth, canvas.offsetHeight))
+                opacity.onmousemove = null;
+            }
+        }
+    }
+
+    btn[0].onclick=function(){
+        arr.pop();
+        ctx.putImageData(arr[arr.length-1],0,0)
+    }
+    btn[2].onclick=function () {
+        opacity.onmousedown=function(){
+            eraser.style.display='block';
+            opacity.onmousemove=function (e) {
+                let ex = e.offsetX-25,ey = e.offsetY-25;
+                eraser.style.top=ey+'px';
+                eraser.style.left=ex+'px';
+                ctx.clearRect(ex,ey,50,50);
+            }
+           opacity.onmouseup=function(){
+               opacity.onmousemove=null;
+               eraser.style.display='none';
+               arr.push(ctx.getImageData(0, 0, canvas.offsetWidth, canvas.offsetHeight))
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
