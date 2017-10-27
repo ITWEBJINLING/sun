@@ -1,0 +1,639 @@
+@import url('base.css');
+/* 头部开始 */
+body{
+    position: relative;
+}
+header{
+    width: 100%;
+    padding: 8px 0;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+.main{
+    width: 100%;
+    height: 66px;
+}
+.main-left{
+    display: block;
+    width: 94px;
+    height: 66px;
+    float: left;
+}
+.main-left img{
+    padding-top: 16px;
+    width: auto;
+    height: auto;
+}
+.main-right,.main-right1{
+    float: right;
+    height: 66px;
+}
+.sou{
+    display: block;
+    height: 24px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    float: left;
+    padding:21px 0;
+}
+.mian{
+    margin-left: 20px;
+    float: right;
+    padding:21px 0;
+}
+.main-right li{
+    margin-right: 50px;
+    float: left;
+    height: 66px;
+    padding: 21px 0;
+}
+.main-right li a{
+    display: block;
+    height: 24px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+}
+.main-right li a:hover{
+    border-bottom: 1px solid #fff;
+}
+.main-right li .wu:hover{
+    border-bottom: none;
+}
+.main-right li:last-child{
+    margin-right: 0;
+}
+.head{
+    width: 100%;
+    height: 80px;
+}
+.main-list{
+    width:70px;
+    height: 200px;
+    background: #333;
+    position: fixed;
+    top:80px;
+    right:0;
+    z-index: 999;
+    display: none;
+}
+.main-list>li{
+    width:100%;
+    height:40px;
+}
+.main-list>li>a{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+}
+/* 头部开始 */
+/*紫砂*/
+main{
+    width:1170px;
+    height: auto;
+    background: pink;
+    margin:0 auto;
+    margin-top: 50px;
+}
+.idea-title,.shop-title,.idea-title1{
+    width: 100%;
+    line-height: 20px;
+    font-size: 20px;
+    color: #000;
+    margin-top: 50px;
+}
+.shop-title{
+    text-align: center;
+}
+.idea-title1{
+    margin-top: 40px;
+}
+.heng,.heng1{
+    width: 20px;
+    height: 3px;
+    background: #333333;
+    margin-top: 20px;
+}
+.heng1{
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.list{
+    width: 100%;
+    height:auto;
+    margin-top: 25px;
+}
+.list>li{
+    width:100%;
+    height:86px;
+    margin-bottom: 14px;
+}
+.list>li>a{
+    display: block;
+    width:80px;
+    height:80px;
+    margin: 6px 20px 0 0;
+    float: left;
+}
+.list>li>a>img{
+    display: block;
+    width:100%;
+    height: 100%;
+}
+.word{
+    width:155px;
+    height:100%;
+    float: left;
+}
+.word>span{
+    width:100%;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+}
+.jia1{
+    width: 100%;
+    margin-top: 18px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #333;
+}
+.jia1>span{
+    margin-right: 21px;
+    color: #888888;
+}
+.shop-content{
+    margin-top: 47px;
+    position: relative;
+}
+.content-img>a{
+    display: block;
+    width:100%;
+    height:360px;
+}
+.content-img{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.big{
+    width: 385px;
+    height: 360px;
+    position: absolute;
+    top:0px;
+    left:423px;
+    z-index: 999;
+    overflow: hidden;
+    background: red;
+    opacity: 0;
+}
+.content-img>a>img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.mask{
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.opacity{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 299;
+}
+.big img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+a.reserch{
+    display: block;
+    width:36px;
+    height:36px;
+    position: absolute;
+    top:5px;
+    right:5px;
+    z-index: 999;
+    border-radius: 50%;
+}
+a.reserch>img{
+    display: block;
+    width:28px;
+    height:28px;
+    margin: 0 auto;
+}
+.mask1{
+    width:430px;
+    height:430px;
+    position: fixed;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    margin:auto;
+    z-index: 99999;
+    box-shadow: 0 0 0 1000px rgba(0,0,0,1);
+    transform: scale(0,0);
+    transition: 0.3s;
+}
+.active{
+    transform: scale(1,1);
+}
+.close{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top:-15px;
+    right:-15px;
+    background: #fff;
+}
+div[class *='btn']{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+div[class *='btn']>img{
+    width:100%;
+    height:100%;
+}
+.btnL{
+    left: -100px;
+}
+.btnR{
+    right: -100px;
+}
+img{
+    width:100%;
+    height:100%;
+}
+.small{
+    width:100%;
+    margin-top: 10px;
+}
+.small>li{
+    height: 88px;
+}
+h1{
+    width: 100%;
+    font-size: 24px;
+    line-height: 28px;
+    color: #333;
+    font-weight: normal;
+}
+.price{
+    width: 100%;
+    margin-top: 17px;
+    font-size: 24px;
+    line-height: 28px;
+    color: #333;
+}
+.price>span{
+    margin-right: 21px;
+    color: #888888;
+}
+.heng+p{
+    width:100%;
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+    line-height: 25px;
+}
+.bottom{
+    margin-top: 20px;
+}
+.bottom>input{
+    height: 50px;
+    margin: 0;
+    padding: 0 15px 0 0;
+    text-align: center;
+    width: 90px;
+    color: #333;
+    font-size: 14px;
+    background: #eee;
+    border: 0;
+    float: left;
+}
+.join{
+    width: 50px;
+    height: 50px;
+    background: #6dd3d1;
+    border-radius: 50%;
+    transition: all 0.3s;
+    float: left;
+    margin-left: 20px;
+}
+.miaoshu{
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 25px;
+    position: relative;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+.miaoshu-title{
+    margin: 0 0 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+.miaoshu-title li{
+    float: left;
+    background: #6dd3d1;
+    width:140px;
+    height:47px;
+    margin-right: 10px;
+}
+.miaoshu-title li a{
+    display: block;
+    width:100%;
+    height:100%;
+    font-size: 14px;
+    text-align: center;
+    line-height: 47px;
+    color: #fff;
+    font-weight: 600;
+}
+.miaoshu>p{
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    padding: 10px 0;
+}
+.product{
+    margin-top: 60px;
+}
+.tu1{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-bottom: 80px;
+}
+.tu1:hover .bj>img{
+    border-radius: 50%;
+}
+.tu1:hover .mask2,.tu1:hover .join1{
+    opacity: 1;
+}
+
+.bj{
+    width: 262px;
+    height: 262px;
+    margin:0 auto;
+    position: relative;
+}
+.bj>img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+.miaoshu1{
+    width: 100%;
+    font-size: 12px;
+    margin-top: 35px;
+    line-height: 12px;
+    text-align: center;
+    color: #333333;
+}
+.jia{
+    width: 100%;
+    margin-top: 18px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: #888888;
+}
+.jia>span{
+    margin-right: 21px;
+    color: #333;
+}
+.mask2{
+    width: 262px;
+    height: 262px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.join1{
+    width: 50px;
+    height: 50px;
+    background: #6dd3d1;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.join1:hover{
+    background: none;
+    transition: all 0.3s;
+}
+/*紫砂*/
+/* 底部 */
+footer{
+    width: 100%;
+    height: auto;
+    background: #000;
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.about,.contact,.recent{
+    height: 100%;
+    padding: 0 15px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.y3>img,.y1>img,.y2>img{
+    display: block;
+    width:16px;
+    height:16px;
+    margin:0 auto;
+}
+.about-title{
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.about>p{
+    width: 100%;
+    font-size: 14px;
+    line-height: 25px;
+    color: #fff;
+    font-weight: 400;
+    text-align: left;
+}
+.contact>div{
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 26px;
+    color: #fff;
+}
+.y1,.y2,.y3{
+    display:block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #6dd3d1;
+    float: left;
+    margin-right: 11px;
+    padding-top: 11px;
+    box-sizing: border-box;
+}
+.y3{
+    margin-right: 0;
+}
+.rec{
+    width: 230px;
+    height: 144px;
+}
+.rec>li{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+article{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+/* 底部 */
+
+
+
+
+
+
+
+
+
+/* 小于768 */
+@media screen and (max-width: 768px) {
+    .main-right {
+        display: none;
+    }
+
+    .main-right1 {
+        display: block;
+    }
+    .wrapper1 {
+        display: none;
+    }
+
+    .wrapper {
+        display: block;
+    }
+    .bigScreen{
+        display: none;
+    }
+    .smallScreen{
+        display: block;
+        width:60%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    h1{
+        margin-top: 20px;
+    }
+    .about,.contact,.recent{
+        margin-bottom: 60px;
+    }
+}
+/* 768-992 */
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .main-right{
+        display: none;
+    }
+    .main-right1{
+        display: block;
+    }
+    .bigScreen{
+        display: none;
+    }
+    .smallScreen{
+        display: block;
+        width:60%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    h1{
+        margin-top: 20px;
+    }
+    .about,.contact,.recent{
+        margin-bottom: 60px;
+    }
+}
+/* 992-1200 */
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .main-right{
+        display: block;
+    }
+    .main-right1{
+        display: none;
+    }
+    .bigScreen{
+        display: none;
+    }
+    .smallScreen{
+        display: block;
+    }
+}
+/* 大于1200 */
+@media screen and (min-width: 1200px) {
+    .main-right {
+        display: block;
+    }
+    .main-right1 {
+        display: none;
+    }
+    .bigScreen{
+        display: block;
+        width:auto;
+        height:auto;
+        overflow: hidden;
+    }
+    .smallScreen{
+        display: none;
+    }
+}

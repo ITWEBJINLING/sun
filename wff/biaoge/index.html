@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		main{
+			width: 1200px;
+			height: auto;
+			margin: 20px auto;
+			border: 1px solid #f1f1f1;
+			overflow: hidden;
+		}
+		.title{
+			width: 100%;
+			height: auto;
+			font-size: 16px;
+			text-align: center;
+			line-height: 50px;
+		}
+		table{
+			width: 100%;
+			height: auto;
+			
+		}
+		tr{
+			margin-bottom: 20px;
+			height: 50px;
+		}
+		tr:nth-of-type(2n){
+			background: #f1f1f1;
+		}
+		th,td{
+			border-collapse: collapse;
+			width: 200px; 
+
+			text-align: center;
+			outline: none;
+		}
+		.addbtn,.reserch{
+			margin-top: 10px;
+			padding: 5px 10px;
+			background: lightskyblue;
+			border: none;
+			outline: none;
+			border-radius: 5px;
+			float: right;
+			margin-right: 76px;
+		}
+		.delbtn{
+			padding: 5px 10px;
+			background: lightskyblue;
+			border: none;
+			outline: none;
+			border-radius: 5px;
+		}
+		.qd{
+			padding: 5px 10px;
+			background: lightskyblue;
+			border: none;
+			outline: none;
+			border-radius: 5px;
+			float: right;
+			margin-top: 20px;
+		}
+		input{
+			width: 100%;
+		}
+		.cha{
+			width: 100px;
+			float: right;
+			margin-top: 12px;
+			margin-right: 10px;
+		}
+		.hz{
+	      display: none;
+	      width: 180px;
+	      height: 180px;
+	      background: #a7a7a7;
+	      position: absolute;
+	      top:0;
+	      bottom: 0;
+	      left:0;
+	      right: 0;
+	      margin: auto;
+	      overflow: hidden;
+    }
+	</style>
+</head>
+<body>
+	<main>
+		<div class="title">wuif1707-1学生信息表</div>
+		<button class="reserch">查询</button>
+		<input type="text" class="cha">
+		<table>
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年龄</th>
+					<th>电话</th>
+					<th>籍贯</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		<button class="addbtn">添加</button>
+	</main>
+	<script src="index.js"></script>
+	<script src="localstorage.js"></script>
+</body>
+</html>

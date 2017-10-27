@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+html,body{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width:200px;
+    height:100%;
+    background:#b0ebc4;
+    padding-top: 120px;
+    position: relative;
+}
+.word{
+    width:100%;
+    height:120px;
+    line-height: 120px;
+    text-align: center;
+    font-size: 40px;
+    font-family: "隶书";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tools,.color,.caozuo{
+    width:200px;
+    height:auto;
+    padding:30px 40px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.color{
+    padding:0 40px;
+}
+.caozuo{
+    padding:0 40px;
+}
+.tools>li,.color>li,.caozuo>li{
+    width:40px;
+    height:40px;
+    border:1px solid #ffffff;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+.tools>li:nth-of-type(2n),.color>li:nth-of-type(2n),.caozuo>li:nth-of-type(2n){
+    margin-right: 0;
+}
+.heng{
+    width:100%;
+    height:2px;
+    background: #9a9e9c;
+    float: left;
+    margin-bottom: 20px;
+}
+.right{
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+}
+.top{
+    width:100%;
+    height:120px;
+    background: #9be3b4;
+    box-sizing: border-box;
+    padding:30px 30px;
+    display: flex;
+}
+.top>div{
+    width:40px;
+    height:40px;
+    border:1px solid #ffffff;
+    margin-right: 20px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+}
+.save{
+    display: block;
+    font-size: 20px;
+    width:40px;
+    height:40px;
+    border:1px solid #ffffff;
+    margin-right: 20px;
+    color:#000;
+}
+.bottom{
+    width:100%;
+    height:calc(100% - 120px);
+    position: relative;
+}
+canvas{
+    border:1px solid #ff6670;
+}
+input{
+    width:35px;
+    display: block;
+    margin:0 auto;
+    margin-top: 8px;
+}
+.eraser{
+    width:50px;
+    height:50px;
+    background: #ff0000;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+.opacity{
+    width:600px;
+    height:542px;
+    /*background: #ff0000;*/
+    position: absolute;
+    top:122px;
+    left:0;
+    z-index: 999;
+}
+.cancle{
+    width:30px;
+    height:30px;
+    border:1px solid #404040;
+}
+li[active=true]{
+    border-color: red;
+}
+.clip{
+    width:100px;
+    height:100px;
+    border:2px dashed #FF6700;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:999;
+    display: none;
+}
+.mw,.xpc{
+    width:100%;
+    height:auto;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin: auto;
+    display: none;
+}

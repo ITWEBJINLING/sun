@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="pallette.css">
+    <script src="pallette.js"></script>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+</head>
+<body>
+<div class="left">
+    <div class="word">画板</div>
+    <ul class="tools">
+        <li id="line"  class="tool" active="true"><div class="iconfont icon-line"></div></li>
+        <li id="dash"  class="tool"><div class="iconfont icon-xuxian"></div></li>
+        <li id="ploy" class="tool"><div class="iconfont icon-duobianxing"></div></li>
+        <li id="rect" class="tool"><div class="iconfont icon-juxing"></div></li>
+        <li id="circle" class="tool"><div class="iconfont icon-yuan"></div></li>
+        <li id="ployJ" class="tool"><div class="iconfont icon-wujiaoxing"></div></li>
+        <li id="pen" class="tool"><div class="iconfont icon-pan_icon"></div></li>
+        <li id="text" class="tool"><div class="iconfont icon-wenzi"></div></li>
+        <div class="heng"></div>
+    </ul>
+
+    <ul class="color">
+        <li id="stroke" class="bian" active="true">
+            <div class="iconfont icon-miaobian "></div>
+            <input type="range" min="1" max="20" step="2" value="1" class="mw" id="lineWidth">
+        </li>
+        <li id="strokeColor">
+            <input type="color" value="" id="strokeStyle" active="true" class="c">
+        </li>
+        <li id="fill" class="bian"><div class="iconfont icon-tianchong "></div></li>
+        <li id="fillColor">
+            <input type="color" value="" id="fillStyle"  class="c">
+        </li>
+        <div class="heng"></div>
+    </ul>
+
+    <ul class="caozuo">
+        <li id="xp">
+            <div class="iconfont icon-xiangpi "></div>
+            <input type="range" min="40" max="200" step="5" value="40" class="xpc">
+        </li>
+        <li id="clip"><div class="iconfont icon-caijian "></div></li>
+        <div class="heng"></div>
+
+    </ul>
+</div>
+    <div class="right">
+        <div class="top">
+            <div class="xin"><div class="iconfont icon-xinjian "></div></div>
+            <a href="" class="save"><div class="iconfont icon-baocun "></div></a>
+            <div id="cancle"><div class="iconfont icon-chexiao "></div></div>
+            <div class="clear">清空</div>
+            <div class="reverse">反向</div>
+            <div class="gray">灰度</div>
+        </div>
+        <div class="bottom">
+            <canvas width="600" height="542"></canvas>
+            <div class="clip"></div>
+        </div>
+        <div class="eraser"></div>
+        <div class="opacity"></div>
+    </div>
+
+    <script>
+        window.onload=function(){
+            let bottom = document.querySelector('.bottom')
+            let canvas = document.querySelector('.opacity');
+            let opacity= document.querySelector('canvas');
+            let line= document.querySelector('#line');
+            let ctx = opacity.getContext('2d');
+            let pallette = new Pallette(canvas,ctx);
+            let tool = document.querySelectorAll('.tool')
+            tool.forEach(element=>{
+                element.onclick=function() {
+                    for(let i =0;i<tool.length;i++){
+                        tool[i].setAttribute('active',false)
+                    }
+                    element.setAttribute('active',true);
+                    let num = 0;
+                    if (this.id == 'pen') {
+                        pallette.pen();
+                    } else if (this.id == 'ploy' || this.id == 'ployJ') {
+                        let num = prompt('请输入多边(角)形边(角)数',5)
+                        pallette.draw(this.id, num);
+                    }else if(this.id =='text'){
+                        pallette.text();
+                    } else {
+                        pallette.draw(this.id,num)
+                    }
+                }
+            })
+            line.onclick();
+
+
+            let stylebtn = document.querySelectorAll('.bian');
+            let colorbtn = document.querySelectorAll('.c');
+            let xp = document.querySelector('#xp');
+            let cancle = document.querySelector('#cancle');
+            let clip = document.querySelector('#clip');
+            let clipobj = document.querySelector('.clip');
+            let save = document.querySelector('.save');
+            let xin = document.querySelector('.xin');
+            let clear = document.querySelector('.clear');
+            let reverse = document.querySelector('.reverse');
+            let gray = document.querySelector('.gray');
+            let mw = document.querySelector('.mw');
+            let xpc = document.querySelector('.xpc');
+            let eraser = document.querySelector('.eraser');
+            console.log(xpc)
+
+            stylebtn.forEach(element=>{
+                element.onclick=function(){
+                    for(let i =0;i<stylebtn.length;i++){
+                        stylebtn[i].setAttribute('active',false)
+                    }
+                    element.setAttribute('active',true);
+                    mw.style.display='block'
+                    mw.onblur=function(){
+                        pallette[this.id]=this.value;
+                        mw.style.display='none'
+                    }
+                    pallette.style=this.id;
+                }
+            })
+            colorbtn.forEach(element=>{
+                element.onclick=function(){
+                    for(let i =0;i<colorbtn.length;i++){
+                        colorbtn[i].parentNode.setAttribute('active',false)
+                    }
+                    element.parentNode.setAttribute('active',true);
+                }
+               element.onchange=function () {
+                   pallette[this.id]=this.value;
+                }
+            })
+            xp.onclick=function(){
+                xpc.style.display = 'block';
+                let xw,xh;
+                xpc.onchange=function(){
+                    xw =this.value;
+                    xh = this.value;
+                    eraser.style.width = xw+'px';
+                    eraser.style.height = xh+'px';
+                    xpc.style.display = 'none';
+                    pallette.eraser(xw,xh);
+                }
+            }.bind(this)
+            cancle.onclick=function(){
+                pallette.cancle();
+            }
+            clip.onclick=function(){
+                pallette.clip(clipobj);
+            }
+            save.onclick=function(){
+               let data = opacity.toDataURL('image/png');
+               save.href = data;
+               save.download = 'tu.png';
+            }
+            clear.onclick = function(){
+                pallette.clear();
+            }
+            xin.onclick = function(){
+                let flag = confirm('是否保存');
+                if(flag){
+                    save.onclick();
+                }
+                clear.onclick();
+            }
+            reverse.onclick=function(){
+                pallette.reverse();
+            }
+            gray.onclick=function(){
+                pallette.gray();
+            }
+        }
+    </script>
+</body>
+</html>
