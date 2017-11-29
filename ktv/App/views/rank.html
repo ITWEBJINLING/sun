@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+           minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="/ktv/Public/css/rank.css">
+    <script src="/ktv/Public/js/rem.js"></script>
+    <script src="/ktv/Public/js/jquery-3.2.1.js"></script>
+    <script src="/ktv/Public/js/iscroll.js"></script>
+    <script src="/ktv/Public/js/rank.js"></script>
+    <link rel="stylesheet" href="/ktv/Public/css/swiper.min.css">
+    <link rel="stylesheet" href="/ktv/Public/css/certify.css">
+    <script src="/ktv/Public/js/swiper.min.js"></script>
+</head>
+<body>
+<!--导航开始-->
+<header>
+    <a href="javascript:history.back()"></a>
+    <p>排行榜</p>
+    <a></a>
+</header>
+<!--导航结束-->
+<!--tab栏开始-->
+<section class="tab">
+    <ul class="tab-top">
+        <li>
+            <a href="/ktv/index.php/singer/index">歌手</a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/ktv/Public/img/music.png" alt="">
+                排行
+            </a>
+
+        </li>
+        <li><a href="">常唱</a></li>
+        <li><a href="">推荐歌单</a></li>
+    </ul>
+</section>
+<!--tab栏结束-->
+<!--banner开始-->
+<div id="certify" class="banner">
+    <div class="swiper-container box">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide solo"><img src="/ktv/Public/img/banner1.png" /></div>
+            <div class="swiper-slide solo"><img src="/ktv/Public/img/singer-05.png" /></div>
+            <div class="swiper-slide solo"><img src="/ktv/Public/img/banner1.png" /></div>
+            <div class="swiper-slide solo"><img src="/ktv/Public/img/singer-06.png" /></div>
+            <div class="swiper-slide solo"><img src="/ktv/Public/img/qcox.png" /></div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+    certifySwiper = new Swiper('#certify .swiper-container', {
+        watchSlidesProgress: true,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        loop: true,
+        loopedSlides: 5,
+        autoplay: 3000,
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        pagination: '.swiper-pagination',
+        //paginationClickable :true,
+        onProgress: function(swiper, progress) {
+            for (i = 0; i < swiper.slides.length; i++) {
+                var slide = swiper.slides.eq(i);
+                var slideProgress = swiper.slides[i].progress;
+                modify = 1;
+                if (Math.abs(slideProgress) > 1) {
+                    modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+                }
+                translate = slideProgress * modify * 260 + 'px';
+                scale = 1 - Math.abs(slideProgress) / 5;
+                zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+                slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+                slide.css('zIndex', zIndex);
+                slide.css('opacity', 1);
+                if (Math.abs(slideProgress) > 3) {
+                    slide.css('opacity', 0);
+                }
+            }
+        },
+        onSetTransition: function(swiper, transition) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slide = swiper.slides.eq(i)
+                slide.transition(transition);
+            }
+
+        },
+        //处理分页器bug
+        onSlideChangeStart: function(swiper) {
+            if (swiper.activeIndex == 4) {
+                swiper.bullets.eq(9).addClass('swiper-pagination-bullet-active');
+                console.log(swiper.bullets.length);
+            }
+        }
+    });</script>
+<!--banner结束-->
+<!--内容开始-->
+<section class="content">
+    <ul class="list">
+    </ul>
+</section>
+<!--内容结束-->
+</body>
+</html>

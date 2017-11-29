@@ -1,0 +1,211 @@
+/*导航开始*/
+@import "base.css";
+body,html{
+    width:100%;
+    height:100%;
+    padding:0 0.24rem;
+}
+body{
+    background: url('../img/gbj.png') no-repeat center/cover;
+}
+header{
+    width:100%;
+    height:0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header>a:first-of-type{
+    display: block;
+    width: 0.4rem;
+    height:0.4rem;
+    background: url("../img/at_04.png") no-repeat center/cover;
+}
+header>p{
+    font-size: 0.36rem;
+    color: #fff;
+}
+/*导航结束*/
+/*tab栏开始*/
+.tab{
+    width: 100%;
+    height:0.52rem;
+    display: flex;
+    flex-direction: column;
+}
+.tab-top{
+    width:100%;
+    height:0.52rem;
+    display: flex;
+    padding:0 0.21rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.tab-top>li{
+    display: flex;
+    align-items: center;
+    font-size: 0.24rem;
+}
+.tab-top>li>a{
+    display: block;
+    width:100%;
+    height:100%;
+    color: #fff;
+}
+.tab-top>li>a>img{
+    width:0.3rem;
+    height:0.3rem;
+}
+/*tab栏结束*/
+/*内容开始*/
+.content{
+    width:100%;
+}
+.content>div{
+    /*margin-right: 0.02rem;*/
+    /*margin-bottom: 0.02rem;*/
+}
+a[class*=p]>img{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+a[class*=p]{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: 999;
+}
+.mask1{
+    width:4.75rem;
+    height:1.40rem;
+    background: rgba(0,0,0,0.21);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.4rem 0 0.23rem;
+}
+.mask1>span:nth-of-type(1){
+    font-size: 0.26rem;
+    color: #fff;
+    text-align: center;
+}
+.mask1>span:nth-of-type(2){
+    width:0.45rem;
+    height:0.03rem;
+    background: #ff318d;
+    margin: 0 auto;
+}
+.mask1>span:nth-of-type(3){
+    font-size: 0.26rem;
+    color: #fff;
+    text-align: center;
+}
+.idol{
+    color: #ff318d;
+    font-weight: 600;
+}
+.mask2,.mask3,.mask4{
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.42);
+    font-size: 0.26rem;
+    color: #fff;
+    text-align: center;
+    line-height: 2.13rem;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.mask5{
+    width:1.68rem;
+    height:1.01rem;
+    background: rgba(0,0,0,0.32);
+    font-size: 0.26rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.mask5>p{
+    width:0.8rem;
+    text-align:justify;
+    text-justify:distribute-all-lines;/*ie6-8*/
+    text-align-last:justify;/* ie9*/
+    -moz-text-align-last:justify;/*ff*/
+    -webkit-text-align-last:justify;/*chrome 20+*/
+}
+.mask6{
+    width:1.76rem;
+    height:1.01rem;
+    background: rgba(0,0,0,0.32);
+    font-size: 0.26rem;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.mask6>span{
+    width:0.15rem;
+    height:0.02rem;
+    background: #fff;
+}
+.mask6>p{
+    width:1.06rem;
+    text-align:justify;
+    text-justify:distribute-all-lines;/*ie6-8*/
+    text-align-last:justify;/* ie9*/
+    -moz-text-align-last:justify;/*ff*/
+    -webkit-text-align-last:justify;/*chrome 20+*/
+}
+.p1{
+    width: 100%;
+    height: 3.95rem;
+    border:1px solid white;
+}
+.p2{
+    width: 2.8rem;
+    height: 2.13rem;
+    border:1px solid white;
+    float: left;
+}
+.p3{
+    width: 2.0rem;
+    height: 2.13rem;
+    border:1px solid white;
+    float: left;
+}
+.p4{
+    width: 2.06rem;
+    height: 2.13rem;
+    border:1px solid white;
+    float: left;
+}
+.p5{
+    width: 2.8rem;
+    height: 3.3rem;
+    border:1px solid white;
+    float: left;
+}
+.p6{
+    width: 4.06rem;
+    height: 3.3rem;
+    border:1px solid white;
+    float: left;
+}
+/*内容结束*/

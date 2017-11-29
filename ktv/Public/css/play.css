@@ -1,0 +1,132 @@
+/*导航开始*/
+@import "base.css";
+body,html{
+    width:100%;
+    height:100%;
+    padding:0 0.24rem;
+}
+body{
+    background: url('../img/ggc.png') no-repeat center/cover;
+}
+header{
+    width:100%;
+    height:0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header>a:first-of-type{
+    display: block;
+    width: 0.4rem;
+    height:0.4rem;
+    background: url("../img/at_04.png") no-repeat center/cover;
+}
+header>p{
+    font-size: 0.36rem;
+    color: #fff;
+}
+/*导航结束*/
+/*内容开始*/
+.content{
+    width:100%;
+}
+.top{
+    margin-top: 0.2rem;
+    width: 100%;
+    height:7rem;
+    overflow: scroll;
+}
+.top>li{
+    width:100%;
+    font-size: 0.3rem;
+    color: #e4dcdc;
+    line-height: 0.5rem;
+    text-align: center;
+}
+.bottom{
+    width:calc(100% - 0.24rem - 0.24rem);
+    height:4.70rem;
+    position: fixed;
+    bottom:0;
+    left: 0.24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.menu{
+    width:100%;
+    height:1.33rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu>li{
+    width:0.88rem;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    font-size: 0.22rem;
+    color: #575861;
+    text-align: center;
+}
+.menu>li>img{
+    display: block;
+    width:100%;
+    height:auto;
+}
+.menu>li.play{
+    width:1.12rem;
+    height:1.12rem;
+}
+.mkf,.voice{
+    padding:0rem 0.35rem;
+    height:0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.18rem;
+}
+.mkf{
+    justify-content: space-between;
+}
+.img>img{
+    width:100%;
+    height:100%;
+}
+.img{
+    width:0.5rem;
+    height:0.5rem;
+}
+.heng,.heng1{
+    width:5.13rem;
+    height:0.06rem;
+    background: #e8d9dd;
+    margin-left: 0.2rem;
+    position: relative;
+}
+.select,.select1{
+    width:0;
+    height:100%;
+    background: #FF318D;
+    border-radius: 0.03rem;
+    position: absolute;
+    left:0;
+    right:0;
+}
+.btn,.btn1{
+    width: 0.16rem;
+    height:0.16rem;
+    border-radius: 50%;
+    background: #ff318d;
+    position: absolute;
+    top:-0.05rem;
+    right:0rem;
+}
+.mkf>span,.voice>span{
+    font-size: 0.18rem;
+    color: #575861;
+}
+.current{
+    margin-left: 0.2rem;
+}
+/*内容结束*/

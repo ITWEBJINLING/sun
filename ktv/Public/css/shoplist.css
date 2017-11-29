@@ -1,0 +1,200 @@
+@import "base.css";
+body,html{
+    width:100%;
+    height:100%;
+    padding:0 0.24rem;
+}
+body{
+    background: url('../img/gbj.png') no-repeat center/cover;
+}
+header{
+    width:100%;
+    height:1.26rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header>a:first-of-type{
+    display: block;
+    width: 0.4rem;
+    height:0.4rem;
+    background: url("../img/at_04.png") no-repeat center/cover;
+}
+header>.center{
+    width: 2.87rem;
+    height:0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.top{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.24rem;
+    color: #fff;
+}
+.circle{
+    width:0.05rem;
+    height:0.05rem;
+    border-radius: 50%;
+    background: #fff;
+}
+.bottom{
+    width: 100%;
+    font-size: 0.24rem;
+    text-align: center;
+    color: #fff;
+}
+.total{
+    font-weight: 600;
+}
+/*内容开始*/
+.wrapper{
+    width:calc(100% - 0.24rem - 0.24rem);
+    height: 8.82rem;
+    position: absolute;
+    z-index: 1;
+    top: 1.2rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 0.07rem;
+    box-shadow: 0 0.1rem 0.5rem 0.02rem rgba(65,65,65,0.09);
+    background: #fff;
+}
+.main{
+    width:100%;
+
+    padding: 0.25rem 0.48rem 0 0.37rem;
+}
+.main>li{
+    width:100%;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main>li>img{
+    width:1.9rem;
+    height:auto;
+}
+.right{
+    width:3.95rem;
+    height:100%;
+}
+.title{
+    font-size: 0.24rem;
+    font-weight: 600;
+    color: #fc3195;
+}
+.description{
+    width:100%;
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.22rem;
+    color: #454d58;
+}
+.guige{
+    font-size: 0.22rem;
+    color: #a2a2a2;
+}
+.right>img{
+    display: block;
+    width:100%;
+    height: auto;
+    margin-top: 0.16rem;
+}
+.num{
+    width:1.82rem;
+    height: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+}
+.subtract{
+    display: block;
+    width: 0.35rem;
+    height: 0.35rem;
+    background: url("../img/subtract.png") no-repeat center/cover;
+}
+.plus{
+    display: block;
+    width: 0.35rem;
+    height: 0.35rem;
+    background: url("../img/plus.png") no-repeat center/cover;
+}
+.num>p{
+    height: 0.36rem;
+    border:0.02rem solid #D2D2D2;
+    border-radius: 0.18rem;
+    background: white;
+    color: #858585;
+    font-weight: 600;
+    text-align: center;
+    line-height: 0.32rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 0.19rem;
+}
+.di{
+    width: 100%;
+    margin-top: 0.44rem;
+    display: flex;
+    justify-content: space-between;
+}
+.price{
+    font-size: 0.34rem;
+    font-weight: 600;
+    color: #fe318e;
+}
+.price>img{
+    width:0.53rem;
+    height:auto;
+}
+/*内容结束*/
+footer{
+    position: fixed;
+    bottom: 0.2rem;
+    left: 0;
+    width:100%;
+    padding:0 0.24rem;
+}
+/*共计开始*/
+.totle{
+    width: 100%;
+    height:1.86rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.totle-box{
+    height:0.48rem;
+    font-size: 0.48rem;
+    color: #ff318e;
+    line-height: 0.48rem;
+    display: flex;
+}
+.totle-box>img{
+    height: 100%;
+    width: auto;
+}
+.totalNum{
+    font-weight: 600;
+}
+/*共计结束*/
+.btn{
+    display: block;
+    width: 5.73rem;
+    height: 0.88rem;
+    background: url("../img/footer.png") no-repeat center/cover;
+    margin: 0 auto;
+    font-size: 0.28rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.88rem;
+}

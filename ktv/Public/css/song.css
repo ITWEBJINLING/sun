@@ -1,0 +1,180 @@
+/*导航开始*/
+@import "base.css";
+body,html{
+    width:100%;
+    height:100%;
+    padding:0 0.24rem;
+}
+body{
+    background: url('../img/songbj.png') no-repeat center/cover;
+}
+header{
+    width:100%;
+    height:0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header>a:first-of-type{
+    display: block;
+    width: 0.4rem;
+    height:0.4rem;
+    background: url("../img/at_04.png") no-repeat center/cover;
+}
+header>a:last-of-type{
+    display: block;
+    font-size: 0.28rem;
+    width:1.2rem;
+    line-height: 0.38rem;
+    text-align: center;
+    color: #fff;
+    height:0.38rem;
+    border-radius: 0.07rem;
+    border: 0.01rem solid #fff;
+}
+header>p{
+    font-size: 0.36rem;
+    color: #fff;
+}
+/*导航结束*/
+/*头部开始*/
+.head{
+    width:100%;
+    height:1.95rem;
+    display: flex;
+    align-items: center;
+}
+.head-left{
+    width:1.67rem;
+    height:1.67rem;
+    background: url("../img/mafan.png") no-repeat center /cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image{
+    width: 1.46rem;
+    height:1.46rem;
+    background: #fff;
+    border-radius: 0.07rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image>img{
+    display: block;
+    width:90%;
+    height:90%;
+}
+.head-right{
+    width:3.6rem;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.55rem;
+    justify-content: space-around;
+}
+.name{
+    font-size: 0.26rem;
+    color: #fff;
+}
+.center{
+    width:100%;
+    display: flex;
+    height: 0.28rem;
+}
+.song{
+    width:1.3rem;
+    height:0.28rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.24rem;
+    color: white;
+}
+.mv{
+    width:1.3rem;
+    height:0.28rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.24rem;
+    color: white;
+    margin-left: 0.4rem;
+}
+.song>img,.mv>img{
+    display: block;
+    height:100%;
+}
+.head-right>img{
+    display: block;
+    width:100%;
+    height:0.02rem;
+}
+.count{
+    font-size: 0.26rem;
+    color: #fff;
+}
+/*头部结束*/
+/*内容开始*/
+.wrapper{
+    width:100%;
+    height:calc(100% - 1.95rem - 0.88rem - 0.6rem);
+    margin-top: 0.6rem;
+    overflow: hidden;
+}
+.content{
+    width:100%;
+    height:auto;
+}
+.content>li{
+    width:100%;
+    height:1.17rem;
+    background: url("../img/fenge.png") no-repeat bottom;
+    position: relative;
+    padding-top: 0.3rem;
+}
+.content>li>a{
+    display: block;
+    width: 90%;
+    height:100%;
+    float: left;
+}
+.num{
+    width:0.32rem;
+    font-size: 0.26rem;
+    color: #f73c5f;
+    float: left;
+    margin-right: 0.28rem;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.26rem;
+    color:#89919e;
+    float: left;
+}
+.time{
+    font-size: 0.24rem;
+    color: #c6c6c6;
+}
+.flag{
+    width:0.47rem;
+    height:0.47rem;
+    background: url("../img/add_07.png") no-repeat center/cover;
+    float: right;
+    -webkit-transition: all 1s;
+}
+.rotate{
+    transform: rotate(45deg);
+}
+.tips{
+    font-size: 0.24rem;
+    color: #f73c5f;
+    line-height: 0.37rem;
+    position: absolute;
+    right:0.5rem;
+    top:0.3rem;
+    display: none;
+}
+/*内容结束*/

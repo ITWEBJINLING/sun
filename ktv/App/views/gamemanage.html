@@ -1,0 +1,48 @@
+<?php include 'adminheader.html'?>
+<script src="/ktv/Public/js/gamemanager.js"></script>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs container " role="tablist" id="myTab">
+        <li role="presentation" class="active">
+            <a href="#add" aria-controls="home" role="tab" data-toggle="tab" id="add">添加</a>
+        </li>
+        <li role="presentation">
+            <a href="#list" aria-controls="profile" role="tab" data-toggle="tab" id="list">查看</a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content container">
+        <div role="tabpanel" class="tab-pane active" id="add-tab">
+            <div class="panel-body">
+                <div class="ktv" style="height: 50px;line-height: 50px;text-align: center;font-size: 18px;">ktv管理系统</div>
+                <form action="javascript:;">
+                <div class="form-group">
+                    <label for="name">游戏名称</label>
+                    <input type="text" class="form-control" id="name" name='gname' placeholder="游戏名称">
+                </div>
+                <div class="form-group">
+                    <label for="type">游戏类型</label>
+                    <input type="text" class="form-control" id="type" name='type' placeholder="游戏类型">
+                </div>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list-tab">
+            <table class="table table-hover">
+                <div class="ktv" style="height: 50px;line-height: 50px;text-align: center;font-size: 18px;">ktv管理系统</div>
+               <thead>
+               <tr>
+                   <th>id</th>
+                   <th>游戏名称</th>
+                   <th>游戏类型</th>
+                   <th>操作</th>
+               </tr>
+               </thead>
+               <tbody>
+               </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
