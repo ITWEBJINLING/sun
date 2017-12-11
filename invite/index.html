@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="rem.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="index.js"></script>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    html,body{
+        width: 100%;
+        height:100%;
+        overflow: hidden;
+    }
+    body{
+        background: url("img/bj.jpg") no-repeat center/cover;
+    }
+    .a,.b,.c{
+        position: absolute;
+        bottom:-10px;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .b{
+        bottom:-10px;
+    }
+    .c{
+        bottom: -10px;
+    }
+    .a>img,.b>img,.c>img{
+        display: block;
+        width: auto;
+        height:auto;
+        margin: 0 auto;
+    }
+    .star1,.star2,.star3{
+        position: absolute;
+        bottom:-50%;
+        left:48%;
+    }
+    .star2{
+        left:38%;
+        bottom: -50%;
+    }
+    .star3{
+        left:58%;
+        bottom: -50%;
+    }
+    .circle1{
+        position: absolute;
+        bottom:160px;
+        left:30%;
+        opacity: 0;
+    }
+    .circle2{
+        position: absolute;
+        bottom:100px;
+        left:50%;
+        opacity: 0;
+    }
+    .circle3{
+        position: absolute;
+        bottom:120px;
+        left:70%;
+        opacity: 0;
+    }
+    .word{
+        position: absolute;
+        top:1.2rem;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 4.1rem;
+        height:auto;
+        animation: invite 2s infinite;
+    }
+    .word>img{
+        display: block;
+        width:100%;
+        height:auto;
+    }
+    .title{
+        position: absolute;
+        bottom:0px;
+        width:100%;
+        left:0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.5rem;
+        color: #fff;
+        text-align: center;
+    }
+    .title>img{
+        width:80%;
+    }
+    @keyframes invite{
+        0%{
+            opacity: 0.4;
+            transform: translateY(0);
+        }
+        50%{
+            opacity: 0.6;
+           transform: translateY(0.6rem);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0rem);
+        }
+    }
+    .y{
+        position: absolute;
+        right:0;
+        top:0;
+    }
+</style>
+<body>
+    <div class="title"><img src="img/title.png" alt=""></div>
+    <div class="word"><img src="img/yaoqing.png" alt=""></div>
+    <div class="a"><img src="img/1.png" alt=""></div>
+    <div class="b"><img src="img/2.png" alt=""></div>
+    <div class="c"><img src="img/3.png" alt=""></div>
+    <div class="star1"><img src="img/1.1.png" alt=""></div>
+    <div class="star2"><img src="img/1.2.png" alt=""></div>
+    <div class="star3"><img src="img/1.3.png" alt=""></div>
+    <div class="circle1"><img src="img/lan.png" alt=""></div>
+    <div class="circle2"><img src="img/lv.png" alt=""></div>
+    <div class="circle3"><img src="img/fen.png" alt=""></div>
+</body>
+</html>
