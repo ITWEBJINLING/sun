@@ -3,13 +3,13 @@ $(function () {
     let b = $('.b');
     let c = $('.c');
     let circle = $("div[class*='circle']")
-    a.animate({bottom:2.2+'rem'},1000)
-    b.animate({bottom:1.4+'rem'},1000).delay(60)
-    c.animate({bottom:0.4+'rem'},1000).delay(120)
+    a.animate({bottom:1.8+'rem'},1000)
+    b.animate({bottom:1+'rem'},1000).delay(60)
+    c.animate({bottom:0+'rem'},1000).delay(120)
     $('.title').animate({bottom:5.8+'rem'},1000).delay(130)
-    $('.star1').animate({bottom:-0.2+'rem'},1000).delay(130)
-    $('.star2').animate({bottom:-0.4+'rem'},1200).delay(130)
-    $('.star3').animate({bottom:-0.6+'rem'},1400).delay(130)
+    $('.star1').animate({bottom:-1.1+'rem'},1000).delay(130)
+    $('.star2').animate({bottom:-1.3+'rem'},1200).delay(130)
+    $('.star3').animate({bottom:-1.5+'rem'},1400).delay(130)
     circle.animate({opacity:1},2000).delay(140)
     setInterval(fn,1000)
     function fn() {
