@@ -32,13 +32,13 @@ $(function () {
             $('.bottom').css({ opacity: 1 });
             $('.content>img').css({ transform: 'scale(1)' });
             $('.name').delay(1000).animate({ left: 0 }, 1000);
-            $('p').delay(2000).animate({ left: 0 }, 1000);
+            $('p').delay(2000).animate({ opacity: 1,left: 0 }, 1000);
         } else {
             $('.second').css({ opacity: 0, transform: 'translateY(0)' });
             $('.bottom').css({ opacity: 0 });
             $('.content>img').css({ transform: 'scale(0)' });
             $('.name').animate({ left: '-100%' }, 1000);
-            $('p').animate({ left: '-180%' }, 1000);
+            $('p').animate({ opacity: 0,left: '-180%' }, 1000);
         }
         flag = !flag;
     });
