@@ -31,13 +31,12 @@ $(function () {
             $('.second').css({ opacity: 1, transform: 'translateY(-100%)' });
             $('.bottom').css({ opacity: 1 });
             $('.content>img').css({ transform: 'scale(1)' });
-            $('.name').delay(1000).animate({ left: 0 }, 1000);
-            $('p').delay(2000).animate({ left: 0 }, 1000);
+            $('.name,p').delay(1000).animate({ left: 0 }, 1000);
         } else {
             $('.second').css({ opacity: 0, transform: 'translateY(0)' });
             $('.bottom').css({ opacity: 0 });
             $('.content>img').css({ transform: 'scale(0)' });
-            $('.name,p').animate({ left: '-100%' }, 1000);
+            $('.name,p').animate({ left: '-200%' }, 1000);
         }
         flag = !flag;
     });
