@@ -8,12 +8,12 @@ $(function () {
     a.animate({ bottom: 1.8 + 'rem' }, 1000);
     b.animate({ bottom: 1 + 'rem' }, 1000).delay(60);
     c.animate({ bottom: 0 + 'rem' }, 1000).delay(120);
-    $('.title').animate({ bottom: 5.8 + 'rem' }, 1000).delay(130);
+    $('.title').animate({ bottom: 5.5 + 'rem' }, 1000).delay(130);
     $('.star1').animate({ bottom: -1.1 + 'rem' }, 1000).delay(130);
     $('.star2').animate({ bottom: -1.3 + 'rem' }, 1200).delay(130);
     $('.star3').animate({ bottom: -1.5 + 'rem' }, 1400).delay(130);
     circle.animate({ opacity: 1 }, 2000).delay(140);
-    setInterval(fn, 1000);
+    setInterval(fn,3000)
     function fn() {
         for (var i = 1; i < 5; i++) {
             var rights = -Math.random() * 4 - 4;

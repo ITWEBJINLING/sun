@@ -11,7 +11,7 @@ $(function () {
     $('.star2').animate({bottom:-1.3+'rem'},1200).delay(130)
     $('.star3').animate({bottom:-1.5+'rem'},1400).delay(130)
     circle.animate({opacity:1},2000).delay(140)
-    setInterval(fn,1000)
+    setInterval(fn,3000)
     function fn() {
         for(let i=1;i<5;i++){
             let rights = -Math.random()*4-4
