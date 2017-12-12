@@ -17,7 +17,7 @@ $(function () {
             let rights = -Math.random()*4-4
             let tops = -Math.random()*2-4
             let img = $('<img>').attr('src',`img/l${i}.png`)
-            let divs = $('<div>').addClass('yu').css({position:'absolute',top:tops+'rem',right:rights+'rem'}).append(img).delay(200*i).animate({right:9+'rem',top:9+'rem'},3000).queue(function () {
+            let divs = $('<div>').addClass('yu').css({position:'absolute',top:tops+'rem',right:rights+'rem'}).append(img).delay(200*i).animate({right:'100%',top:'100%'},3000).queue(function () {
              $(this).remove();
             })
             divs.appendTo($('body'))
