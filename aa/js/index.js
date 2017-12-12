@@ -36,7 +36,7 @@ $(function () {
             $('.bottom').css({opacity: 0})
             $('.content>img').css({transform:'scale(0)'})
             $('.name').animate({left:'-100%'},1000)
-            $('p').animate({left:'-180%'},1000)
+            $('p').animate({left:'-200%'},1000)
         }
         flag=!flag;
     })
