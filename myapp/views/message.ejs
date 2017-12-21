@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width:300px;
+        height:200px;
+        position: fixed;
+        top:0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 1px solid #dddddd;
+    }
+    .title{
+        width:100%;
+        height:30px;
+        line-height: 30px;
+        text-align: center;
+        background: #f2f2f2;
+    }
+    .content{
+        width:100%;
+        height:170px;
+        text-align: center;
+        line-height: 30px;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="title">提示信息</div>
+        <div class="content">
+            <%= message %><br>
+            <span>3</span>s后返回<br>
+            如无响应，请点击 <a href="<%= url%>">这里</a>
+        </div>
+    </div>
+    <script>
+        let span= document.querySelector("span");
+        let num =3;
+        setInterval(function () {
+            num--;
+            if(num<0){
+                location.href="<%= url  %>"
+            }else{
+                span.innerHTML=num;
+            }
+        },1000)
+    </script>
+</body>
+</html>
